@@ -130,11 +130,8 @@ int 	ft_parser(t_printf *p)
 	else if (*p->str == 'd' || *p->str == 'i')
 		ft_addnbr(p);
 	else if (*p->str == 'f')
-	{
-		///////////////////////////////////////////////////////
-		printf("ITS f\n");///////////////////////////////////////
-		///////////////////////////////////////////////////////
-	}
+		// ft_add_d(p);
+		printf("f");
 	else if (*p->str == 'p')
 		ft_add_p(p);
 	else if (*p->str == 'o' || *p->str == 'u' || *p->str == 'x' || *p->str == 'X')

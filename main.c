@@ -21,6 +21,11 @@ int main(void)
 //	printf("HELLO!% 15.5s!\n", "this is test");
 	//printf("orig: %-10.5d!\n", 123456789);
 	//ft_printf("test: %-10.5d!\n", 123456789);
-	printf("orig: u:%u;o:%o;x:%x;X:%X;\n", 1234, 1234, 1234, 1234);
-	ft_printf("test: u:%u;o:%o;x:%x;X:%X;\n", 1234, 1234, 1234, 1234);
+	// printf("orig: u:%u;o:%o;x:%x;X:%X;\n", 1234, 1234, 1234, 1234);
+	// ft_printf("test: u:%u;o:%o;x:%x;X:%X;\n", 1234, 1234, 1234, 1234);
+
+	printf("orig: %G\n", 20.999999);
+	// ft_printf("test: %f\n", 20.9);
+	// t_printf *p;
+	// ft_add_d(p);
 }

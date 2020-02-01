@@ -73,6 +73,7 @@ int		is_a_printf_flag(char c);
 int 	ft_tocnost(t_printf *p);
 int 	is_a_digit(char c);
 
-char	*ft_llitoa(long long nbr, int *len);
+char	*ft_llitoa(long long nbr);
+int		ft_add_d(t_printf *p);
 
 #endif
