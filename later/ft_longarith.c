@@ -6,43 +6,11 @@
 /*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 23:20:37 by qjosmyn           #+#    #+#             */
-/*   Updated: 2020/01/31 23:00:57 by qjosmyn          ###   ########.fr       */
+/*   Updated: 2020/02/02 17:46:34 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header_double.h"
-
-t_bigdbl	ft_mul(t_bigdbl a, t_bigdbl b)
-{
-	t_bigdbl		rslt;
-	unsigned long	i;
-	unsigned long	j;
-	unsigned long	temp;
-	unsigned long	carry;
-
-	i = -1;
-	while (i++ <= (a.size + b.size))
-		rslt.coef[i] = 0;
-	i = -1;
-	while (i++ <= a.size)
-	{
-		carry = 0;
-		j = -1;
-		while (j++ < b.size)
-		{
-			temp = a.coef[i] * b.coef[j] + rslt.coef[i + j] + carry;
-			carry = temp / BASE;
-			rslt.coef[i + j] = temp - carry * BASE;
-		}
-		rslt.coef[i + j] = temp - carry * BASE;
-	}
-	i = a.size + b.size - 1;
-	rslt.size = (rslt.coef[i] == 0) ? i : i + 1;
-	// if (rslt.coef[i] == 0)
-	// 	i--;
-	// rslt.size = i + 1;
-	return (rslt);
-}
 
 t_bigdbl	ft_mul_la(t_bigdbl a, short b)
 {
@@ -121,6 +89,31 @@ t_bigdbl	ft_sum_la(t_bigdbl a, t_bigdbl b)
 	{
 		rslt.coef[i] = carry;
 		rslt.size = a.size + 1;
+	}
+	return (rslt);
+}
+
+t_bigdbl	ft_new_la(unsigned int nbr)
+{
+	t_bigdbl		rslt;
+	size_t			i;
+	unsigned int	n;
+
+	n = nbr;
+	i = 1;
+	while (n > BASE)
+	{
+		n = n / BASE;
+		i++;
+	}
+	rslt.size = i;
+	rslt.coef = (short*)malloc(sizeof(short) * i);
+	i = 0;
+	while (i < rslt.size)
+	{
+		rslt.coef[i] = nbr % BASE;
+		nbr = nbr / BASE;
+		i++;
 	}
 	return (rslt);
 }

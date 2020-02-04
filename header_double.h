@@ -6,7 +6,7 @@
 /*   By: qjosmyn <qjosmyn@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 18:56:32 by qjosmyn           #+#    #+#             */
-/*   Updated: 2020/01/31 23:02:40 by qjosmyn          ###   ########.fr       */
+/*   Updated: 2020/02/02 18:32:33 by qjosmyn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@
 
 typedef	long double		        t_ldouble;
 typedef	unsigned long long int	t_ullint;
-typedef struct			s_double
+typedef struct					s_double
 {
-	t_ullint			mantisa;
-	int					order;
-	int					sign;
-}						t_double;
+	t_ullint					mantisa;
+	int							order;
+	int							sign;
+}								t_double;
 
 typedef struct					s_bigdbl
 {
@@ -40,9 +40,15 @@ typedef struct					s_bigdbl
 	t_ullint					sizemax;
 	short						*coef;
 }								t_bigdbl;
-t_bigdbl	ft_mul_la(t_bigdbl a, short b);
-t_bigdbl	ft_pow_la(t_bigdbl a, int count, int dig);
-t_bigdbl	ft_sum_la(t_bigdbl a, t_bigdbl b);
+t_bigdbl						ft_mul_la(t_bigdbl a, short b);
+t_bigdbl						ft_pow_la(t_bigdbl a, int count, int dig);
+t_bigdbl						ft_sum_la(t_bigdbl a, t_bigdbl b);
+int								ft_intlen(long long nbr);
+char							*ft_add_d(t_ldouble a, int i);
+t_bigdbl						ft_to_the_point(t_double val);
+t_bigdbl						ft_new_la(unsigned int nbr);
+t_double						ft_defldbl(long double *n);
+char							*ft_revstr(char *str);
 
 void	ft_printnbr(t_bigdbl nbr);
 
